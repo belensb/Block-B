@@ -2,35 +2,40 @@
 {% load static %}
 
 {% block contenido %}
-<div class="card" style="width: 0%;">
 
-  {% if user.imagen_perfil %}
-  <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px;">
-  {% else %}
-  <img src="{% static 'images/default_avatar.jpg' %}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px;">
-  {% endif %}
+<section style="display: grid;">
+  <div class="card"  style="width: 27%; border-radius: 6%; place-self: center; margin-top: auto; margin-bottom: auto;">
 
-
-  <div class="card-body">
-    <h5 class="card-title">Nombre: {{user.first_name}} {{user.last_name}}</h5>
-
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><i class="fa-regular fa-user"></i> @{{user.username}}</li>
-
-    {% if user.telefono %}
-    <li class="list-group-item"><i class="fa-solid fa-phone"></i> {{user.telefono}}</li>
+    {% if user.imagen_perfil %}
+    <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil" style="border-radius: 50%; height: 280px; width: 280px; padding: 5px; margin-top: 25px; margin-bottom: 10px; place-self: center; display: grid;">
+    {% else %}
+    <img src="{% static 'images/default_avatar.jpg' %}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px; margin-top: 10px; margin-bottom: 10px; place-self: center; display: grid;">
     {% endif %}
-
-    
-    {% if user.domicilio %}
-    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> {{user.domicilio}}</li>
-    {% endif %}
-
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'editar-perfil' user.id %}" class="card-link">Editar perfil</a>
+  
+  
+    <div class="card-body" style="place-self: center; display: grid;">
+      <h5 class="card-title">Nombre: {{user.first_name}} {{user.last_name}}</h5>
+  
+    </div>
+    <ul class="list-group list-group-flush" style="place-self: center; display: grid;">
+      <li class="list-group-item"><i class="fa-regular fa-user"></i> @{{user.username}}</li>
+  
+      {% if user.telefono %}
+      <li class="list-group-item"><i class="fa-solid fa-phone"></i> {{user.telefono}}</li>
+      {% endif %}
+  
+      
+      {% if user.domicilio %}
+      <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> {{user.domicilio}}</li>
+      {% endif %}
+  
+    </ul>
+    <div class="card-body" style="place-self: center; display: grid;">
+      <a href="{% url 'editar-perfil' user.id %}" class="card-link">Editar perfil</a>
+    </div>
   </div>
-</div>
+</section>
+
+
 
 {% endblock contenido %}
