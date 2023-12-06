@@ -20,6 +20,6 @@ from . import views #importamos los views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('index/', views.index_view, name='index') # enlazamos el index con el views.py
+    path ('', views.index_view, name='index') # enlazamos el index con el views.py
 ]
 
