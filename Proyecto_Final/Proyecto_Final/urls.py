@@ -1,6 +1,7 @@
 """
 URL configuration for Proyecto_Final project.
 
+
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
@@ -18,9 +19,14 @@ from django.contrib import admin
 from django.urls import path
 from . import views #importamos los views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', views.index_view, name='index'), # enlazamos el index con el views
-    path('publicaciones', views.publicaciones_view, name='publicaciones' )
-] 
+    path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py
+    path('publicaciones/', views.publicaciones_view, name='publicaciones'),
+    path('terror/', views.terror_view, name='terror'),
+    path('romance/', views.romance_view, name='romance'),
+    path('fabula/',views.fabula_view, name='fabula')
+    ]
+
 

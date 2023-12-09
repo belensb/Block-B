@@ -1,9 +1,22 @@
-# vista basada en una funcion# 
+# vista basada en una funcion.
 from django.shortcuts import render
 
 
-def index_view(request): #definimos el index_view y le hacemos un request para que solicite el archivo 
- return render(request, 'index.html', {}) #retornamos la solicitud y le pedimos que haga el render
+def index_view(request): #definimos el index_view y le hacemos un request para que solicite el archivo
+ return render(request, 'index.html', {}) #retornamos la solicitud y le pedimos que haga el rendet
 
-def publicaciones_view(request): #definimos publicaciones y le hacemos la peticion con el request
-    return render (request, 'publicaciones.html', {}) #hacemos el retorno de la peticion que hizo el request con ell render 
+
+def publicaciones_view(request):                  #definimos el publicaciones_view y le hacemos un request para que solicite el archivo
+ return render(request, 'publicaciones.html', {}) #retornamos la solicitud y le pedimos que haga el render
+
+
+def terror_view(request): #definimos el terror_view y le hacemos un request para que solicite el archivo
+ return render(request, 'terror.html', {}) #retornamos la solicitud y le pedimos que haga el render
+
+
+def romance_view(request): #definimos el romance_view y le hacemos un request para que solicite el archivo
+ return render(request, 'romance.html', {}) #retornamos la solicitud y le pedimos que haga el render
+
+
+def fabula_view(request): #definimos el fabula_view y le hacemos un request para que solicite el archivo
+ return render(request, 'fabula.html', {}) #retornamos la solicitud y le pedimos que haga el render
