@@ -21,7 +21,6 @@ from . import views #importamos los views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', views.index_view, name='index'), # enlazamos el index con el views
-    path('publicaciones/', views.publicaciones_view, name='publicaciones' )
+    path('publicaciones', views.publicaciones_view, name='publicaciones' )
 ] 
 
-akjshdfkjahsjaksjdhkjashdkjaskjdhkasd
