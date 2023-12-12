@@ -23,7 +23,7 @@ from . import views #importamos los views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py
-    path ('', views.inicio_view, name='inicio'),
+    path ('inicio/', views.inicio_view, name='inicio'),
    #aca van los includs
     path('publicaciones/', include('publicaciones.urls'))
     
