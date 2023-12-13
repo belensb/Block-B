@@ -2,24 +2,24 @@
 
 
 {% block contenido %}
-    <div><h2>PUBLICACIONES</h2></div>
+<div>
+  <h2>PUBLICACIONES</h2>
+</div>
 
-  <!--Tarjeta de Publicación-->
-  <div class="card">
-    <div class="card-header">
-      13/12/2023
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Publicacion prueba</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Leer más</a>
-    </div>
+<!--Llamamos al diccionario de contexto dentro de la funcion publicaciones_views-->
+{% for publicacion in publicaciones %}
+<!--Tarjeta de Publicación-->
+<div class="card">
+  <div class="card-header">
+    {{publicacion.fecha}}
   </div>
+  <div class="card-body">
+    <h5 class="card-title">{{publicacion.titulo}}</h5>
+    <p class="card-text">{{publicacion.cuerpo}}</p>
+    <a href="#" class="btn btn-primary">Leer más</a>
+  </div>
+</div>
+{% endfor %}
 
-  
 
-
-
-   
 {% endblock contenido %}
-    
