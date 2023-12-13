@@ -1,6 +1,6 @@
 from django.db import models
 
-# creamos una clase llamada publicación y extructurando la tabla heredada de models
+# creamos una clase llamada publicación y estructurando la tabla heredada de models
 class Publicacion(models.Model):
     fecha = models.DateField(auto_now_add=True)
     titulo = models.CharField(max_length=50)
