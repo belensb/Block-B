@@ -77,8 +77,7 @@ WSGI_APPLICATION = 'Proyecto_Final.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': '',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': '', #Cambiar según nombre de la base de datos local
         'USER': 'root', #Cambiar según usuario de sql local
         'PASSWORD': '', #Cambiar según contraseña de sql local
@@ -86,6 +85,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
 
 
 
