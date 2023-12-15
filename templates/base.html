@@ -22,7 +22,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{% url 'inicio'%}" class="logo"><strong>BLOCK-B</strong><span>NEWS</span></a>
+						<a href="{% url 'index'%}" class="logo"><strong>BLOCK-B</strong><span>NEWS</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -31,9 +31,10 @@
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="{% url 'inicio' %}">INICIO</a></li>
+							<li><a href="{% url 'index' %}">INICIO</a></li>
 							<li><a href="{% url 'ver-publicaciones' %}">PUBLICACIONES</a></li>
-							<li><a href="generic.html">SOBRE BLOCK</a></li>
+							<li><a href="{% url 'categoria' %}">CATEGORIAS</a></li>
+							<li><a href="elements.html">SOBRE BLOCK</a></li>
 							<li><a href="elements.html">CONTACTO</a></li>
 						</ul>
 						<ul class="actions stacked">

@@ -77,7 +77,6 @@ WSGI_APPLICATION = 'Proyecto_Final.wsgi.application'
 
 DATABASES = {
     'default': {
-
         'ENGINE': 'django.db.backends.mysql',
         'NAME': '', #Cambiar según nombre de la base de datos local
         'USER': 'root', #Cambiar según usuario de sql local

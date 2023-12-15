@@ -5,8 +5,8 @@ from django.shortcuts import render
 def index_view(request): #definimos el index_view y le hacemos un request para que solicite el archivo
  return render(request, 'index.html', {}) #retornamos la solicitud y le pedimos que haga el rendet
 
-def inicio_view(request): #definimos el terror_view y le hacemos un request para que solicite el archivo
- return render(request, 'inicio.html', {}) #retornamos la solicitud y le pedimos que haga el render
+def categorias_view(request): #definimos el terror_view y le hacemos un request para que solicite el archivo
+ return render(request, 'categorias.html', {}) #retornamos la solicitud y le pedimos que haga el render
 
 
 def romance_view(request): #definimos el romance_view y le hacemos un request para que solicite el archivo
