@@ -4,12 +4,12 @@
 
 {% block contenido %}
 	<!-- Banner -->
-<section id="banner" class="major">
-    <div class="inner">
-                
-    <header class="major">
-        <h1>BIENVENIDO A BLOCK-B</h1>
-    </header>
+    <section id="banner" class="major">
+        <div class="inner">
+                    
+        <header class="major">
+            <h1>BIENVENIDO A BLOCK-B</h1>
+        </header>
     <div class="content">
         <p>¡Bienvenido a nuestra biblioteca, un refugio para los amantes de la lectura! Disfruta de momentos inolvidables sumergiéndote en las páginas de nuestros libros cuidadosamente seleccionados. Explora mundos inexplorados, conoce personajes fascinantes y déjate llevar por las historias que esperan ansiosas ser descubiertas. En nuestra biblioteca, cada libro es una puerta a la imaginación, y cada página es una nueva aventura. ¡Sumérgete en el placer de la lectura y descubre el inmenso universo que aguarda en cada estante!
        </p>
@@ -29,7 +29,7 @@
                 <img src="{% static 'images/it.jpg' %}" alt="" />
             </span>
             <header class="major">
-                <h3><a href="landing.html" class="link">TERROR</a></h3>
+                <h3><a href="{% url 'terror' %}" class="link">TERROR</a></h3>
                 <p>Horrores entre páginas inquietantes</p>
             </header>
         </article>
@@ -38,7 +38,7 @@
                 <img src="{% static 'images/ruiseñor.jpg' %}" alt="" />
             </span>
             <header class="major">
-                <h3><a href="landing.html" class="link">ROMANCE</a></h3>
+                <h3><a href="{% url 'romance' %}" class="link">ROMANCE</a></h3>
                 <p>Amor entrelazado en historias cautivadoras</p>
             </header>
         </article>
@@ -47,7 +47,7 @@
                 <img src="{% static 'images/pyj.jpg' %}" alt="" />
             </span>
             <header class="major">
-                <h3><a href="landing.html" class="link">FICCION</a></h3>
+                <h3><a href="{% url 'ficcion' %}" class="link">FICCIÓN</a></h3>
                 <p>Aventuras en mundos imaginarios inexplorados</p>
             </header>
         </article>

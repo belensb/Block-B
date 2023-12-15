@@ -23,9 +23,12 @@ from . import views #importamos los views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py
-    path ('categorias/', views.categorias_view, name='categoria'),
+    
+    
+    
    #aca van los includs
-    path('publicaciones/', include('publicaciones.urls'))
+    path('publicaciones/', include('publicaciones.urls')),
+    path('categorias/', include('categorias.urls')),
     
    
     ]

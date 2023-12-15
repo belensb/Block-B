@@ -22,7 +22,19 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{% url 'index'%}" class="logo"><strong>BLOCK-B</strong><span>NEWS</span></a>
+						<a href="{% url 'index'%}" class="logo"><strong>BLOCK-B</strong></a>
+					    <a class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Categorías
+						  </a>
+						  <ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="{% url 'terror' %}">Terror</a></li>
+							<li><a class="dropdown-item" href="{% url 'romance' %}">Romance</a></li>
+							<li><a class="dropdown-item" href="{% url 'ficcion' %}">Ficción</a></li>
+
+						  </ul>
+						</a>
+
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -33,7 +45,7 @@
 						<ul class="links">
 							<li><a href="{% url 'index' %}">INICIO</a></li>
 							<li><a href="{% url 'ver-publicaciones' %}">PUBLICACIONES</a></li>
-							<li><a href="{% url 'categoria' %}">CATEGORIAS</a></li>
+							<li><a href="{% url 'ver-categorias' %}">TODAS LAS CATEGORIAS</a></li>
 							<li><a href="elements.html">SOBRE BLOCK</a></li>
 							<li><a href="elements.html">CONTACTO</a></li>
 						</ul>
@@ -52,6 +64,7 @@
 				
 		  </div>
 				<!-- Footer -->
+				<br> <!--SALTO DE LINEA PARA QUE EL FOOTER NO SE SOBREPONGA EN EL BOBY-->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="icons">
