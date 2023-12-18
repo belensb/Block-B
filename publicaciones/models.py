@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # creamos una clase llamada publicación y estructurando la tabla heredada de models
 class Publicacion(models.Model):
@@ -10,3 +11,6 @@ class Publicacion(models.Model):
     
     def __str__(self):
         return self.titulo
+    
+    def get_absolute_url(self):
+        return reverse('ver-publicaciones')
