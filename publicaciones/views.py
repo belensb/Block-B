@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Publicacion
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .forms import PublicarForm #importamos el formulario para publicar
 
 # Crea tus vistas aqui.
@@ -27,7 +27,7 @@ class Publicar(CreateView):
     form_class = PublicarForm
 
 
-#view basada en una clase para modificar una punlicaciones
+#view basada en una clase para modificar publicaciones
 class ModificarPublicacionView(UpdateView):
     model = Publicacion
     template_name = 'publicaciones/modificar-publicacion.html'
@@ -35,4 +35,8 @@ class ModificarPublicacionView(UpdateView):
     success_url = '../ver-publicaciones/'
     
     
-    
+#view basada en una clase para eliminar una publicación
+class EliminarPublicacionView(DeleteView):
+   model = Publicacion
+   template_name = 'publicaciones/eliminar-publicacion.html'
+   success_url = '../ver-publicaciones/'
