@@ -16,7 +16,8 @@
     margin-top: 20px;
 }
 
-/*Estilo de botón Crear Cuenta*/
-#btn-registrarse{
+/*Estilo de botones en registrarse e iniciar sesion para crear una separacion con el campo de texto de arriba*/
+#btn-registrarse,
+#btn-login{
     margin-top: 30px;
 }

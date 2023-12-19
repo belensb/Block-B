@@ -2,10 +2,9 @@
 
 
 {% block contenido %}
-    <h4>Create una cuenta</h4>
     <form method="post"> {% csrf_token %}
         {{form}}
-        <button type="submit" id="btn-registrarse">Crear cuenta</button>
+        <button type="submit" id="btn-login">Iniciar Sesión</button>
     </form>
 {% endblock contenido %}
     

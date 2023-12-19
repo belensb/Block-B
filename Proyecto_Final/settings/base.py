@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#VARIABLES DE LOGIN
+LOGIN_URL = '/usuarios/login'
+LOGIN_REDIRECT_URL = '/publicaciones/ver-publicaciones'
+
 
 # Application definition
 
@@ -74,26 +78,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Proyecto_Final.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog', #Cambiar según nombre de la base de datos local
-        'USER': 'root', #Cambiar según usuario de sql local
-        'PASSWORD': 'Marco@2016#', #Cambiar según contraseña de sql local
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
-
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -116,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ar'
 
 TIME_ZONE = 'UTC'
 

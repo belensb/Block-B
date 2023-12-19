@@ -22,7 +22,10 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
+						<!-- Logo -->
 						<a href="{% url 'index'%}" class="logo"><strong>BLOCK-B</strong></a>
+
+					<!-- Menú desplegable -->
 					    <a class="nav-item dropdown">
 						  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Categorías
@@ -37,11 +40,23 @@
 
 						  </ul>
 						</a>
+					<!-- Fin menú desplegable -->
 
+											
 						<nav>
+						<!-- User -->
+							<span>
+								
+								{% if user.is_authenticated %}
+								<a href="">{{user.first_name}}</a>
+								{% else %}
+								<a href="{% url 'login' %}">Iniciar sesión</a>
+								{% endif %}
+								
+							</span>
 							<a href="#menu">Menu</a>
 						</nav>
-					</header>
+					</header>					
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -53,8 +68,8 @@
 							<li><a href="elements.html">CONTACTO</a></li>
 						</ul>
 						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">crea tu cuenta</a></li>
-							<li><a href="#" class="button fit">Logeate</a></li>
+							<li><a href="{% url 'registrarse' %}" class="button primary fit">crea tu cuenta</a></li>
+							<li><a href="{% url 'logout' %}" class="button fit">Cerrar Sesión</a></li>
 						</ul>
 					</nav>
 
