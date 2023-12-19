@@ -1,3 +1,4 @@
+/*Estilo de tarjeta de publicaciones*/
 .card{
     height: 50px;
     width: 230px;
@@ -5,6 +6,7 @@
 }
 
 
+/*Estilo de cuerpo de pagina cuando no hay publicaciones*/
 .middlebody{
     height: 480px;
     width: auto;
@@ -14,3 +16,7 @@
     margin-top: 20px;
 }
 
+/*Estilo de botón Crear Cuenta*/
+#btn-registrarse{
+    margin-top: 30px;
+}

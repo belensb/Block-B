@@ -29,8 +29,7 @@ urlpatterns = [
    #aca van los includs
     path('publicaciones/', include('publicaciones.urls')),
     path('categorias/', include('categorias.urls')),
-    
-   
+    path('usuarios/', include('usuarios.urls'))
     ]
 
 
