@@ -6,6 +6,7 @@
 <div>
   <h2>PUBLICACIONES</h2>
 </div>
+<a href="{% url 'publicar' %}" class="button">publicar algo nuevo</a>
 
 <!--Llamamos al diccionario de contexto dentro de la funcion publicaciones_views-->
 {% for publicacion in publicaciones %}
@@ -13,6 +14,9 @@
 <div class="card">
   <div class="card-header">
     {{publicacion.fecha}}
+    <span>
+      <a href="{% url 'modificar-publicacion' publicacion.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
+    </span>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{publicacion.titulo}}</h5>

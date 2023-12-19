@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import Publicacion
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from .forms import PublicarForm #importamos el formulario para publicar
 
 # Crea tus vistas aqui.
 
-def publicaciones_view(request):  #definimos el publicaciones_view y le hacemos un request para que solicite el archivo
+def Publicaciones_view(request):  #definimos el publicaciones_view y le hacemos un request para que solicite el archivo
  #creamos una variable a la que se le asigan un diccionario que se utilizará para traer los datos de la db
  ctx = {
   'publicaciones' : Publicacion.objects.all() #hacemos la solicitud para que la db nos devuelva todo de la tabla publicaciones
@@ -25,4 +25,14 @@ class Publicar(CreateView):
     model = Publicacion
     template_name = 'publicaciones/publicar.html'
     form_class = PublicarForm
+
+
+#view basada en una clase para modificar una punlicaciones
+class ModificarPublicacionView(UpdateView):
+    model = Publicacion
+    template_name = 'publicaciones/modificar-publicacion.html'
+    form_class = PublicarForm
+    success_url = '../ver-publicaciones/'
+    
+    
     
