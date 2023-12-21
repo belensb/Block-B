@@ -34,15 +34,16 @@
   </select>
 
 
-
-
-
   <button type="submit">Filtrar</button>
 </form>
 
 
 
-<a href="{% url 'publicar' %}" class="button">publicar algo nuevo</a>
+{% if user.is_colaborador or user.is_superuser %}
+<a href="{% url 'publicar' %}" class="button">publicar algo nuevo</a>  
+{% endif %}
+  
+
 
 <!--Llamamos al diccionario de contexto dentro de la funcion publicaciones_views-->
 {% for publicacion in publicaciones %}

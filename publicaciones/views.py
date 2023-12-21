@@ -8,13 +8,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .mixins import ColaboradorMixin, CreadorMixin
 # Crea tus vistas aqui.
 
-def Publicaciones_view(request):  #definimos el publicaciones_view y le hacemos un request para que solicite el archivo
+'''def Publicaciones_view(request):  #definimos el publicaciones_view y le hacemos un request para que solicite el archivo
  #creamos una variable a la que se le asigan un diccionario que se utilizará para traer los datos de la db
  ctx = {
   'publicaciones' : Publicacion.objects.all() #hacemos la solicitud para que la db nos devuelva todo de la tabla publicaciones
  }
 
- return render(request, 'publicaciones/publicaciones.html', ctx) #retornamos la solicitud y le pedimos que haga el render
+ return render(request, 'publicaciones/publicaciones.html', ctx)''' #retornamos la solicitud y le pedimos que haga el render
 
 #view basada en clase, para enlistar las publicaciones
 class PublicacionesView(ListView):
