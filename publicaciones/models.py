@@ -3,6 +3,7 @@ from django.urls import reverse
 from usuarios.models import Usuario
 
 
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
    
@@ -14,9 +15,10 @@ class Publicacion(models.Model):
     fecha = models.DateField(auto_now_add=True)
     titulo = models.CharField(max_length=50)
     cuerpo = models.TextField()
-    categoria = models.ForeignKey(Categoria, related_name='publicaciones', on_delete=models.SET_NULL, null=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, related_name='publicaciones', null=True)
     creador = models.ForeignKey(Usuario, related_name='publicaciones', on_delete=models.CASCADE)
-    
+    imagen = models.ImageField(upload_to='imagenes_publicaciones', null=True, blank=True)
+
     def __str__(self):
         return self.titulo
     

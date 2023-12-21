@@ -77,7 +77,12 @@
 						</ul>
 						<ul class="actions stacked">
 							<li><a href="{% url 'registrarse' %}" class="button primary fit">crea tu cuenta</a></li>
-							<li><a href="{% url 'logout' %}" class="button fit">Cerrar Sesión</a></li>
+
+							
+							<form method="post" action="{% url 'logout' %}">
+								{% csrf_token %}
+								<button type="submit", class = "button primary fit">Cerrar sesión</button>
+							</form>
 						</ul>
 					</nav>
 

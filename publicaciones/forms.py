@@ -4,7 +4,7 @@ from .models import Publicacion, Comentario  #importamos la tabla con la que vam
 class PublicarForm(forms.ModelForm): #definimos clase padre para heredar
     class Meta:
         model = Publicacion
-        fields = ['titulo', 'cuerpo', 'categoria']
+        fields = ['titulo', 'cuerpo', 'categoria', 'imagen']
         
 
 class ComentarioForm(forms.ModelForm): 

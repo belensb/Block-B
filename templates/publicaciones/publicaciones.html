@@ -10,6 +10,38 @@
 <div>
   <h2>PUBLICACIONES</h2>
 </div>
+
+<form method="get">
+
+  <!--Filtro por categoria-->
+
+  <select name="categoria" id="">
+    <option value="">Todas</option>
+    {% for categoria in categorias %}
+    <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+    {% endfor %}
+
+  </select>
+
+  <!--Ordenar-->
+ 
+  <select name="orderby" id="">
+    <option value="">Ordenar por</option>
+    <option value="fecha_asc">Fecha ascendente</option>
+    <option value="fecha_desc">Fecha descendentes</option>
+    <option value="alf_asc">Alfabeticamente ascendente</option>
+    <option value="alf_desc">Alfabeticamente descendente</option>
+  </select>
+
+
+
+
+
+  <button type="submit">Filtrar</button>
+</form>
+
+
+
 <a href="{% url 'publicar' %}" class="button">publicar algo nuevo</a>
 
 <!--Llamamos al diccionario de contexto dentro de la funcion publicaciones_views-->
@@ -28,7 +60,8 @@
   <div class="card-body">
     <h5 class="card-title">{{publicacion.titulo}}</h5>
     <p class="card-text">{{publicacion.cuerpo}}</p>
-    <a href="{% url 'detalle-publicaciones' publicacion.id %}" class="btn btn-primary">Leer más</a>
+    <p class="card-text"><i class="fa-solid fa-tag"></i>{{publicacion.categoria}}</p>
+    <a href="{% url 'detalle-publicacion' publicacion.id %}" class="btn btn-primary">Leer más</a>
   </div>
 </div>
 {% endfor %}

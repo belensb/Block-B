@@ -1,11 +1,12 @@
-from django.urls import path #importamos los path desde django urls
-from .import views #importamos las views 
-
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path ('ver-publicaciones/', views.Publicaciones_view, name='publicaciones'), #enlazamos ver-publicaciones con las views y le damos el nombre ver-publicaciones
-    path('publicar/', views.Publicar.as_view(), name ='publicar'),
-    path ('modificar/<int:pk>', views.ModificarPublicacionView.as_view(),name= 'modificar-publicacion'),
-    path('eliminar/<int:pk>', views.EliminarPublicacionView.as_view(),name='eliminar-publicacion'),
-    path('detalle/<int:pk>', views.DetallePublicacionView.as_view(),name='detalle-publicaciones'),
-    ]   
+    path('ver-publicaciones/', views.PublicacionesView.as_view(), name='publicaciones'),
+    path('publicar/', views.Publicar.as_view(), name='publicar'),
+    path('modificar/<int:pk>', views.ModificarPublicacionView.as_view(), name='modificar-publicacion'),
+    path('eliminar/<int:pk>', views.EliminarPublicacionView.as_view(), name='eliminar-publicacion'),
+    path('detalle/<int:pk>', views.DetallePublicacion.as_view(), name='detalle-publicacion'),
+    path('borrar-comentario/<int:pk>', views.BorrarComentarioView.as_view(), name='borrar-comentario'),
+    path('editar-comentario/<int:pk>', views.EditarComentarioView.as_view(), name='editar-comentario')
+]
