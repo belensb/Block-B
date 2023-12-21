@@ -49,13 +49,19 @@
 						<nav>
 						<!-- User -->
 							<span>
-								
 								{% if user.is_authenticated %}
+								
+								{% if user.imagen_perfil %}
+								<img src="{{user.imagen_perfil.url}}" alt="Imagen de perfil" style="height: 40px; width: 40px; border-radius: 200px;">
+								{% else %}
+								<img src="{% static 'images/default_avatar.jpeg' %}" alt="" style="height: 40px; width: 40px; border-radius: 200px;">
+								{% endif %}
+								
 								<a href="">{{user.first_name}}</a>
 								{% else %}
-								<a href="{% url 'login' %}">Iniciar sesión</a>
-								
+								<a href="{% url 'login' %}">Iniciar Sesion</a>
 								{% endif %}
+
 									
 							
 						
@@ -70,6 +76,7 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="{% url 'index' %}">INICIO</a></li>
+							<li><a href="{% url 'mi-perfil' %}">Mi Perfil</a></li>
 							<li><a href="{% url 'publicaciones' %}">PUBLICACIONES</a></li>
 							<li><a href="{% url 'ver-categorias' %}">TODAS LAS CATEGORIAS</a></li>
 							<li><a href="elements.html">SOBRE BLOCK</a></li>
