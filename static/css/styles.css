@@ -1,9 +1,21 @@
-
 /*Estilo de tarjeta de publicaciones*/
 .card{
     height: 50px;
     width: 230px;
     margin-top: 60px;
+}
+
+/*Estilo del nav*/
+/*nav{
+    margin: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}*/
+
+nav img{
+	margin: 5px;
 }
 
 

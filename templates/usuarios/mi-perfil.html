@@ -3,33 +3,34 @@
 
 {% block contenido %}
 <div class="card" style="width: 70%;">
-    
-    {% if user.imagen_perfil %}
-    <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil">
-    {% else %}
-    <img src="{% static 'images/default_avatar.jpeg' %}" class="card-img-top" alt="imagen de perfil">
-    {% endif %}
-        
-    
-    <div class="card-body">
-      <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
-      
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">@{{user.username}}</li>
-      
-      {% if user.telefono %}
-      <li class="list-group-item">{{user.telefono}}</li>  
-      {% endif %}
-        
-      
-      <li class="list-group-item">{{user.domicilio}}</li>
-      
-    </ul>
-    <div class="card-body">
-      <a href="{% url 'editar-perfil' user.id %}" class="card-link">Editar perfil</a>
-    </div>
+
+  {% if user.imagen_perfil %}
+  <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px;">
+  {% else %}
+  <img src="{% static 'images/default_avatar.jpg' %}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px;">
+  {% endif %}
+
+
+  <div class="card-body">
+    <h5 class="card-title">Nombre: {{user.first_name}} {{user.last_name}}</h5>
+
   </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="fa-regular fa-user"></i> @{{user.username}}</li>
+
+    {% if user.telefono %}
+    <li class="list-group-item"><i class="fa-solid fa-phone"></i> {{user.telefono}}</li>
+    {% endif %}
+
     
+    {% if user.domicilio %}
+    <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> {{user.domicilio}}</li>
+    {% endif %}
+
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'editar-perfil' user.id %}" class="card-link">Editar perfil</a>
+  </div>
+</div>
+
 {% endblock contenido %}
-    
