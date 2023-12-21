@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
+<style>
+  strong{
+    color: black;
+  }
+</style>
 {% block contenido %}
 <div>
   <h2>PUBLICACIONES</h2>
@@ -13,7 +17,7 @@
 <!--Tarjeta de Publicación-->
 <div class="card">
   <div class="card-header">
-    {{publicacion.fecha}}
+    {{publicacion.fecha}} - @{{publicacion.creador.username}}
     <span>
       <!-- Botón eliminar -->
       <a href="{% url 'eliminar-publicacion' publicacion.id %}"><i class="fa-solid fa-trash"></i></a>
@@ -24,7 +28,7 @@
   <div class="card-body">
     <h5 class="card-title">{{publicacion.titulo}}</h5>
     <p class="card-text">{{publicacion.cuerpo}}</p>
-    <a href="#" class="btn btn-primary">Leer más</a>
+    <a href="{% url 'detalle-publicaciones' publicacion.id %}" class="btn btn-primary">Leer más</a>
   </div>
 </div>
 {% endfor %}

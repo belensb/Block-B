@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="{% static 'images/losJDA.jpg' %}" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{publicacion.titulo}}</h5>
+        <p class="card-text">{{publicacion.cuerpo}}</p>
+        <p class="card-text"><small class="text-muted">{{publicacion.fecha}} - {{publicacion.creador}}</small></p>
+      </div>
+    </div>
+</div>
+
+<!--sección para comentar-->
+<form method="post"> {% csrf_token %}
+    {{form}}
+
+  <button type="submit">Comentar</button>
+
+</form>
+
+
+<!--Caja de Comentarios hechos-->
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      COMENTARIOS
+    </div>
+    <ul class="list-group list-group-flush">
+
+
+      
+        {% for comentario in publicacion.comentarios.all %}
+         
+        <li class="list-group-item">{{comentario.texto}} - {{comentario.creador}}</li>
+        {% endfor %}
+        
+
+    
+    </ul>
+</div>
+
+<br>
+{% endblock contenido %}
+    

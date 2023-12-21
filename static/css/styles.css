@@ -1,3 +1,4 @@
+
 /*Estilo de tarjeta de publicaciones*/
 .card{
     height: 50px;
@@ -20,4 +21,8 @@
 #btn-registrarse,
 #btn-login{
     margin-top: 30px;
+}
+
+strong{
+    color: black;
 }
