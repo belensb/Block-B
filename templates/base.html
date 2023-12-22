@@ -77,12 +77,11 @@
 							<li><a href="elements.html">CONTACTO</a></li>
 						</ul>
 						<ul class="actions stacked">
-							<li><a href="{% url 'registrarse' %}" class="button primary fit">crea tu cuenta</a></li>
-
+							<li><a href="{% url 'registrarse' %}" class="button primary fit" style="margin-bottom: 10px;">crea tu cuenta</a></li>
 							
 							<form method="post" action="{% url 'logout' %}">
 								{% csrf_token %}
-								<button type="submit", class = "button primary fit">Cerrar sesión</button>
+								<button type="submit", class = "button secondary fit">Cerrar sesión</button>
 							</form>
 						</ul>
 					</nav>
