@@ -54,6 +54,7 @@
     {% if user.is_colaborador or user.is_superuser %}
     <span>
         <!-- Botón eliminar -->
+        
       <a href="{% url 'eliminar-publicacion' publicacion.id %}"><i class="fa-solid fa-trash"></i></a>
       <!-- Botón modificar -->
       <a href="{% url 'modificar-publicacion' publicacion.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
