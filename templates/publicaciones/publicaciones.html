@@ -51,12 +51,14 @@
 <div class="card">
   <div class="card-header">
     {{publicacion.fecha}} - @{{publicacion.creador.username}}
+    {% if user.is_colaborador or user.is_superuser %}
     <span>
-      <!-- Botón eliminar -->
+        <!-- Botón eliminar -->
       <a href="{% url 'eliminar-publicacion' publicacion.id %}"><i class="fa-solid fa-trash"></i></a>
       <!-- Botón modificar -->
       <a href="{% url 'modificar-publicacion' publicacion.id %}"><i class="fa-regular fa-pen-to-square"></i></a>
     </span>
+    {% endif %}
   </div>
   <div class="card-body">
     <h5 class="card-title">{{publicacion.titulo}}</h5>
