@@ -22,11 +22,10 @@ from django.conf import settings
 from django.conf.urls.static import static 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py
+    path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py   
+    path('acerca-de/', views.acercade_view, name='about'),
     
-    
-    
-   #aca van los includs
+   #aca van los includes
     path('publicaciones/', include('publicaciones.urls')),
     path('categorias/', include('categorias.urls')),
     path('usuarios/', include('usuarios.urls'))
