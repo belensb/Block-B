@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', views.index_view, name='index'), # enlazamos, con un str vacio, el index con el views.py   
     path('acerca-de/', views.acercade_view, name='about'),
+    path('contacto/', views.contacto_view, name= 'contacto'),
     
    #aca van los includes
     path('publicaciones/', include('publicaciones.urls')),
