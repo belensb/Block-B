@@ -92,9 +92,12 @@
                 
                 Con gratitud,
                 [BLOCK]</p>
-            <ul class="actions">
-                <li><a href="{% url 'registrarse' %}" class="button next">Crea tu cuenta</a></li>
-            </ul>
+                {% if not user.is_authenticated %}
+                <ul class="actions">
+                    <li><a href="{% url 'registrarse' %}" class="button next">Crea tu cuenta</a></li>
+                </ul>
+            {% endif %}
+            
         </div>
     </section>
     
