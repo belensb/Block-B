@@ -78,7 +78,7 @@
 							<li><a href="{% url 'publicaciones' %}">PUBLICACIONES</a></li>
 							<li><a href="{% url 'ver-categorias' %}">TODAS LAS CATEGORIAS</a></li>
 							<li><a href="{% url 'about' %}">SOBRE BLOCK</a></li>
-							<li><a href="elements.html">CONTACTO</a></li>
+							<li><a href="{% url 'contacto' %}">CONTACTO</a></li>
 						</ul>
 						<ul class="actions stacked">
 							{% if not user.is_authenticated %}
@@ -107,7 +107,7 @@
 							<div class="contact-method">
 								<span class="icon solid alt fa-envelope"></span>
 								<h3>Email</h3>
-								<a href="#">Block.2024.01@gmail.com</a>
+								<a style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #fff; text-decoration: none; border-radius: 5px;"  href="mailto:Block.2024.01@gmail.com">Block.2024.01@gmail.com</a>
 							</div>
 						</section>
 						<section>
@@ -121,7 +121,7 @@
 							<div class="contact-method">
 								<span class="icon solid alt fa-home"></span>
 								<h3>Direccion</h3>
-								<span>1234 Somewhere Road #5432<br />
+								<span><br />
 								Chaco Resistencia, CP 3500<br />
 								Argentina</span>
 							</div>
