@@ -9,6 +9,8 @@ urlpatterns = [
     path('intro-ciencia/', views.ciencia_view, name='ciencia'),
     path('intro-historia/', views.historia_view, name='historia'),
     path('intro-guerra/', views.guerra_view, name='guerra'),
+
+    
 ]
 
 """path('romance/', views.romance_view, name='romance'),"""
