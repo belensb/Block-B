@@ -24,7 +24,7 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3yqea^sc+8$7xor$q6n2@4*$3g54^(@ys9y@9!1b$aydru4=1b'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['grupo6info.pythonanywhere.com']
 
 #VARIABLES DE LOGIN
 LOGIN_URL = '/usuarios/login'
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'Proyecto_Final.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

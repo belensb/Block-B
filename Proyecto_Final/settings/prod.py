@@ -7,6 +7,8 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 #Datos de la db en python anywhere, NO MODIFICAR
 DATABASES = {
     'default': {
