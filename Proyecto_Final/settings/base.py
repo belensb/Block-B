@@ -24,7 +24,7 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-3yqea^sc+8$7xor$q6n2@4*$3g54^(@ys9y@9!1b$aydru4=1b'
 
-ALLOWED_HOSTS = ['grupo6info.pythonanywhere.com']
+ALLOWED_HOSTS = ['grupo6info.pythonanywhere.com', '127.0.0.1']
 
 #VARIABLES DE LOGIN
 LOGIN_URL = '/usuarios/login'
