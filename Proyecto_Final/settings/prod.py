@@ -7,13 +7,14 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+#Datos de la db en python anywhere, NO MODIFICAR
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '', #Cambiar según nombre de la base de datos local
-        'USER': '', #Cambiar según usuario de sql local
-        'PASSWORD': '', #Cambiar según contraseña de sql local
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'grupo6info$blog_db',
+        'USER': 'grupo6info',
+        'PASSWORD': 'informatorio2023',
+        'HOST': 'grupo6info.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
