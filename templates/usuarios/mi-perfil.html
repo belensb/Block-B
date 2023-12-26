@@ -7,9 +7,9 @@
   <div class="card"  style="width: 27%; border-radius: 6%; place-self: center; margin-top: auto; margin-bottom: auto;">
 
     {% if user.imagen_perfil %}
-    <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil" style="border-radius: 50%; height: 280px; width: 280px; padding: 5px; margin-top: 25px; margin-bottom: 10px; place-self: center; display: grid;">
+    <img src="{{user.imagen_perfil.url}}" class="card-img-top" alt="imagen de perfil" style="border-radius: 50%; height: 100%; width: 100%; padding: 5px; margin-top: 25px; margin-bottom: 10px; place-self: center; display: grid;">
     {% else %}
-    <img src="{% static 'images/default_avatar.jpg' %}" class="card-img-top" alt="imagen de perfil" style="height: 100px; width: 100px; padding: 5px; margin-top: 10px; margin-bottom: 10px; place-self: center; display: grid;">
+    <img src="{% static 'images/default_avatar.jpg' %}" class="card-img-top" alt="imagen de perfil" style="height: 100%; width: 100%; padding: 5px; margin-top: 10px; margin-bottom: 10px; place-self: center; display: grid;">
     {% endif %}
   
   
