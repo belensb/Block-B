@@ -26,21 +26,60 @@
 
       </p>
     </div>
-    <h3>COMENTAR:<h3>
-        <form method="post" enctype="multipart/form-data"> {% csrf_token %}
-            {{form}}
-    
-            
-            <textarea  class="form_class" id="Publicacion"></textarea>
-            <button type="submit">COMENTAR</button>
-        </form>
-        {% for comentario in comentarios %}
-        <div>
-            <p>{{ comentario.texto }}</p>
-            <!-- Añade más campos del comentario según tus necesidades -->
-        </div>
-    {% endfor %}
+{% if user.is_authenticated %}
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
+{{form}}
+
+<button type="submit">Comentar!</button>
+
+</form>
+{% else %}
+<a href="{% url 'login' %}">Inicia sesión para comentar</a>    
+{% endif %}
+<div class="card" style="width: 100%; padding: 5px;">
+    <div class="card-header">
+        COMENTARIOS
     </div>
+
+
+    <ul class="list-group list-group-flush">
+
+
+        {% if publicacion.comentarios.all %}
+
+        {% for comentario in publicacion.comentarios.all %}
+        <div class="comentario-header">
+            <strong>{{comentario.creador}}</strong>
+            
+            {% if user.is_authenticated %}
+                {% if user == comentario.creador %}
+                    <!-- Mostrar botones solo si el usuario actual es el creador del comentario -->
+                    <a href="{% url 'borrar-comentario' comentario.id %}">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                    <a href="{% url 'editar-comentario' comentario.id %}">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                {% else %}
+                    <!-- Mostrar mensaje de falta de permisos -->
+                    <span style="color: red;">No tienes permisos para modificar/eliminar este comentario.</span>
+                {% endif %}
+            {% endif %}
+        </div>
+        
+        <li class="list-group-item">{{comentario.texto}}</li>
+    {% endfor %}
+    
+
+        {% else %}
+        <p>No hay comentario aun.</p>
+        {% endif %}
+
+
+
+    </ul>
+
+</div>
 
 
 {% endblock contenido %}

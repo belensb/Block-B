@@ -24,22 +24,60 @@
         Hacer conciencia sobre el lugar que ocupa nuestra especie y nuestro planeta en el universo, y presentar las modernas visiones de la cosmología y las últimas noticias de la exploración espacial, y en particular, las misiones Voyager.
         El programa de televisión estuvo listo en 1980 y constaba de trece episodios, cada uno de aproximadamente una hora de duración. La música utilizada fue mayormente obra de Vangelis y otros. Ganó un Premio Emmy y un Peabody. La serie se ha emitido en 60 países y ha sido vista por más de 400 millones de personas. Tras el rodaje de la serie, Sagan escribió el libro homónimo Cosmos, complementario al documental.</p>
     </div>
-    <h3>COMENTAR<h3>
-    <form method="post" enctype="multipart/form-data"> {% csrf_token %}
-        {{form}}
+    {% if user.is_authenticated %}
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
+    {{form}}
 
+    <button type="submit">Comentar!</button>
+
+</form>
+{% else %}
+<a href="{% url 'login' %}">Inicia sesión para comentar</a>    
+{% endif %}
+    <div class="card" style="width: 100%; padding: 5px;">
+        <div class="card-header">
+            COMENTARIOS
+        </div>
+    
+    
+        <ul class="list-group list-group-flush">
+    
+    
+            {% if publicacion.comentarios.all %}
+    
+            {% for comentario in publicacion.comentarios.all %}
+            <div class="comentario-header">
+                <strong>{{comentario.creador}}</strong>
+                
+                {% if user.is_authenticated %}
+                    {% if user == comentario.creador %}
+                        <!-- Mostrar botones solo si el usuario actual es el creador del comentario -->
+                        <a href="{% url 'borrar-comentario' comentario.id %}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <a href="{% url 'editar-comentario' comentario.id %}">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    {% else %}
+                        <!-- Mostrar mensaje de falta de permisos -->
+                        <span style="color: red;">No tienes permisos para modificar/eliminar este comentario.</span>
+                    {% endif %}
+                {% endif %}
+            </div>
+            
+            <li class="list-group-item">{{comentario.texto}}</li>
+        {% endfor %}
         
-        <textarea  class="form_class" id="Publicacion"></textarea>
-        <button type="submit">COMENTAR</button>
-    </form>
-    {% for comentario in comentarios %}
-    <div>
-        <p>{{ comentario.texto }}</p>
-        <!-- Añade más campos del comentario según tus necesidades -->
+    
+            {% else %}
+            <p>No hay comentario aun.</p>
+            {% endif %}
+    
+    
+    
+        </ul>
+    
     </div>
-{% endfor %}
-</div>
-      
 
 {% endblock contenido %}
     
