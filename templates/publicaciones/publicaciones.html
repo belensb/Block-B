@@ -47,17 +47,28 @@
 
 <!--Llamamos al diccionario de contexto dentro de la funcion publicaciones_views-->
 {% for publicacion in publicaciones %}
-<!--Tarjeta de Publicación-->
+<!-- Tarjeta de Publicación -->
 <div class="card" style="margin-bottom: 20px;">
   <div class="card-header">
     {{publicacion.fecha}} - <strong style="color: black;">@{{publicacion.creador.username}}</strong>
-    {% if user.es_colaborador or user.is_superuser %}
-    <span>
-        <!-- Botón eliminar -->
-      <a href="{% url 'eliminar-publicacion' publicacion.id %}"><i class="fa-solid fa-trash" style="margin-right: 5px; float: right;"></i></a>
-      <!-- Botón modificar -->
-      <a href="{% url 'modificar-publicacion' publicacion.id %}"><i class="fa-regular fa-pen-to-square" style="margin-right: 10px;float: right;"></i></a>
-    </span>
+    {% if user.is_authenticated %}
+      {% if user == publicacion.creador or user.is_superuser %}
+        <span>
+          <!-- Botón eliminar -->
+          <a href="{% url 'eliminar-publicacion' publicacion.id %}">
+            <i class="fa-solid fa-trash" style="margin-right: 5px; float: right;"></i>
+          </a>
+          <!-- Botón modificar -->
+          <a href="{% url 'modificar-publicacion' publicacion.id %}">
+            <i class="fa-regular fa-pen-to-square" style="margin-right: 10px; float: right;"></i>
+          </a>
+        </span>
+      {% else %}
+        <span>
+          <!-- Mostrar mensaje de falta de permisos -->
+          <p style="color: red; float: right;">No tienes permisos para modificar/eliminar esta publicación.</p>
+        </span>
+      {% endif %}
     {% endif %}
   </div>
   <div class="card-body">
