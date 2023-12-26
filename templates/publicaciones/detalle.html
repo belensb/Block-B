@@ -9,7 +9,7 @@
             {% if publicacion.imagen %}
             <img src="{{ publicacion.imagen.url }}" class="img-fluid rounded-start" alt="...">
             {% else %}
-            <img src="{% static 'images/amyt.jpg' %}" class="img-fluid rounded-start" alt="...">
+            <img src="{% static 'images/default_post.png' %}" class="img-fluid rounded-start" alt="...">
             {% endif %}
 
 
@@ -62,9 +62,6 @@
                     <a href="{% url 'editar-comentario' comentario.id %}">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                {% else %}
-                    <!-- Mostrar mensaje de falta de permisos -->
-                    <span style="color: red;">No tienes permisos para modificar/eliminar este comentario.</span>
                 {% endif %}
             {% endif %}
         </div>
