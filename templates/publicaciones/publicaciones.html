@@ -63,19 +63,14 @@
             <i class="fa-regular fa-pen-to-square" style="margin-right: 10px; float: right;"></i>
           </a>
         </span>
-      {% else %}
-        <span>
-          <!-- Mostrar mensaje de falta de permisos -->
-          <p style="color: red; float: right;">No tienes permisos para modificar/eliminar esta publicación.</p>
-        </span>
       {% endif %}
     {% endif %}
   </div>
   <div class="card-body">
     <h5 class="card-title">{{publicacion.titulo}}</h5>
     <p class="card-text">{{publicacion.cuerpo}}</p>
-    <p class="card-text"><i class="fa-solid fa-tag"></i>{{publicacion.categoria}}</p>
     <a href="{% url 'detalle-publicacion' publicacion.id %}" class="btn btn-primary">Leer más</a>
+    <p class="card-text" style="display: inline-block; margin-left: 10px;"><i class="fa-solid fa-tag"></i> {{publicacion.categoria}}</p>
   </div>
 </div>
 {% endfor %}
