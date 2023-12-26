@@ -16,8 +16,8 @@
 
 
         
-<div class="card" style="display: grid; background-color: #ebe5e5;">
-    <img class="card-img-top" src="{% static 'images/historia.jpg' %}" style="width: 500px; height: 500px; place-self: center; margin-top: 50px;" alt=" ">
+<div class="card" style="display: grid; background-color: #7ccf87;">
+    <img class="card-img-top" src="{% static 'images/historia.jpg' %}" style="width: 50%; height: 50%; place-self: center; margin-top: 50px;" alt=" ">
     <div class="card-body" style="width: auto; height: auto;">
         <h4 class="card-title">
             Guardar en favoritosMarcar como leídoCompartir libro
@@ -26,7 +26,22 @@
 
       </p>
     </div>
-  </div>
+    <h3>COMENTAR:<h3>
+        <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+            {{form}}
+    
+            
+            <textarea  class="form_class" id="Publicacion"></textarea>
+            <button type="submit">COMENTAR</button>
+        </form>
+        {% for comentario in comentarios %}
+        <div>
+            <p>{{ comentario.texto }}</p>
+            <!-- Añade más campos del comentario según tus necesidades -->
+        </div>
+    {% endfor %}
+    </div>
+
 
 {% endblock contenido %}
     

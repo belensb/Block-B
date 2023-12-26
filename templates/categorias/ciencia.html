@@ -14,8 +14,8 @@
 </section>
 
 
-<div class="card" style="display: grid; background-color: #ebe5e5;">
-    <img class="card-img-top" src="{% static 'images/CSP.jpg' %}" style="width: 500px; height: 500px; place-self: center; margin-top: 50px;" alt=" ">
+<div class="card" style="display: grid; background-color: #7ccf87;">
+    <img class="card-img-top" src="{% static 'images/CSP.jpg' %}" style="width: 50%; height: 50%px; place-self: center; margin-top: 50px;" alt=" ">
     <div class="card-body" style="width: auto; height: auto;">
         <h4 class="card-title">COSMOS: UN VIAJE PERSONAL</h4>
       <p class="card-text">Cosmos: un viaje personal , es una serie documental de divulgación científica escrita por Carl Sagan, Ann Druyan y Steven Soter (con Sagan como guionista principal y presentador), cuyos objetivos fundamentales fueron:
@@ -23,8 +23,22 @@
         Hacer conciencia sobre el lugar que ocupa nuestra especie y nuestro planeta en el universo, y presentar las modernas visiones de la cosmología y las últimas noticias de la exploración espacial, y en particular, las misiones Voyager.
         El programa de televisión estuvo listo en 1980 y constaba de trece episodios, cada uno de aproximadamente una hora de duración. La música utilizada fue mayormente obra de Vangelis y otros. Ganó un Premio Emmy y un Peabody. La serie se ha emitido en 60 países y ha sido vista por más de 400 millones de personas. Tras el rodaje de la serie, Sagan escribió el libro homónimo Cosmos, complementario al documental.</p>
     </div>
-  </div>
-  
+    <h3>COMENTAR<h3>
+    <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+        {{form}}
+
+        
+        <textarea  class="form_class" id="Publicacion"></textarea>
+        <button type="submit">COMENTAR</button>
+    </form>
+    {% for comentario in comentarios %}
+    <div>
+        <p>{{ comentario.texto }}</p>
+        <!-- Añade más campos del comentario según tus necesidades -->
+    </div>
+{% endfor %}
+</div>
+      
 
 {% endblock contenido %}
     
