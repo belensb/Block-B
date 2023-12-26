@@ -5,6 +5,7 @@
     <form method="post" action="{% url 'login' %}"> {% csrf_token %}
         {{form}}
         <button type="submit" id="btn-login">Iniciar Sesión</button>
+        <p>No tenes una cuenta? <a href="{% url 'registrarse' %}">Create una.</a></p>
     </form>
 {% endblock contenido %}
     
