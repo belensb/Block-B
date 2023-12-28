@@ -1,12 +1,10 @@
-
-
-nav img{
-	margin: 5px;
+nav img {
+    margin: 5px;
 }
 
 
 /*Estilo de cuerpo de pagina cuando no hay publicaciones*/
-.middlebody{
+.middlebody {
     height: 480px;
     width: auto;
     margin-left: 25px;
@@ -17,10 +15,10 @@ nav img{
 
 /*Estilo de botones en registrarse e iniciar sesion para crear una separacion con el campo de texto de arriba*/
 #btn-registrarse,
-#btn-login{
+#btn-login {
     margin-top: 30px;
 }
 
-strong{
+strong {
     color: black;
 }

@@ -9,8 +9,7 @@ urlpatterns = [
     path('intro-ciencia/', views.ciencia_view, name='ciencia'),
     path('intro-historia/', views.historia_view, name='historia'),
     path('intro-guerra/', views.guerra_view, name='guerra'),
-
-    
+    path('<str:nombre_categoria>/', views.publicaciones_por_categoria, name='publicaciones_por_categoria'),
 ]
 
 """path('romance/', views.romance_view, name='romance'),"""
