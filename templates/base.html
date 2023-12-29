@@ -46,9 +46,9 @@
 					<!-- Fin menú desplegable -->
 
 											
-						<nav>
+						<nav class="nav-menu">
 						<!-- User -->
-							<span style="display: flex">
+							<span class="ocultar-item" style="display: flex">
 								{% if user.is_authenticated %}
 								
 								{% if user.imagen_perfil %}
@@ -82,18 +82,20 @@
 						</ul>
 						<ul class="actions stacked">
 							{% if not user.is_authenticated %}
+							<li><a href="{% url 'login' %}" class="button secondary fit">Iniciar Sesion</a></li>
 							<li><a href="{% url 'registrarse' %}" class="button primary fit" style="margin-bottom: 10px;">crea tu cuenta</a></li>
 							{% endif %}
 
 							{% if user.is_authenticated %}
 							<form method="post" action="{% url 'logout' %}">
 								{% csrf_token %}
-								<button type="submit", class = "button secondary fit">Cerrar sesión</button>
+								<button type="submit" class = "button secondary fit">Cerrar sesión</button>
 							</form>
 							{% endif %}
 								
 						</ul>
 					</nav>
+			</div>
 
           <!--MIDDLE BODY-->
 		  <div class="middlebody"> 

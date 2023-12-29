@@ -1,7 +1,18 @@
 nav img {
     margin: 5px;
 }
+/*Ocultar botón INICIAR SESION en pantallas mas pequeñas*/
+@media screen and (max-width: 600px) {
+    .ocultar-item{
+        visibility: hidden;
+    }
+}
 
+@media screen and (max-width: 480px) {
+    .nav-menu{
+        margin-left: -31%;
+    }
+}
 
 /*Estilo de cuerpo de pagina cuando no hay publicaciones*/
 .middlebody {
