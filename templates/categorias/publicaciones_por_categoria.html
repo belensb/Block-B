@@ -18,7 +18,6 @@
         <h2>ANIMATE A VIAJAR A TRAVÉS DEL TIEMPO CON NOSOTROS</h2>
     {% elif publicaciones.0.categoria.nombre == 'guerra' %}
         <h2>¿LISTO PARA ÉPICOS RELATOS DE VALENTIA?</h2>
-    <!-- Agrega más condiciones según tus categorías -->
     {% else %}
         <h2>EXPLORÁ TODAS LAS PUBLICACIONES DE ESTA CATEGORÍA</h2>
     {% endif %}
@@ -43,7 +42,7 @@
             </div>
 
             <!-- Footer de la tarjeta -->
-            <div class="card-footer">
+            <div class="card-footer" style="background-color: #c8c8c8;">
                 <div class="d-grid gap-2 mx-auto">
                     <a href="{% url 'detalle-publicacion' publicacion.id %}" class="btn btn-outline-secondary"
                         role="button">Ver publicación</a>
