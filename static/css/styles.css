@@ -22,7 +22,7 @@ strong {
     color: black;
 }
 
-#postCat.card{
+#postCat.card {
     box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
 }
 
@@ -45,8 +45,9 @@ strong {
 #miPerfil h6 {
     color: black;
 }
+
 /*Botón editar perfil*/
-#miPerfil h5.mb-0 a.btn{
+#miPerfil h5.mb-0 a.btn {
     font-weight: bold;
     border: 1px solid #d5d9d9;
     border-radius: 8px;
@@ -62,4 +63,42 @@ strong {
         margin-right: auto;
     }
 }
+
 /*FIN ESTILOS TARJETA MI PERFIL*/
+
+.contenido {
+    display: block;
+}
+
+/* Estilos para pantallas más grandes*/
+@media (min-width: 768px) {
+    .contenido {
+        display: flex;
+        align-items: center;
+        align-items: flex-start;
+    }
+
+    .contenido img {
+        margin-right: 30px;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    }
+    .contenido h4{
+        padding-top: 5px;
+        margin-bottom: 3px;
+    }
+}
+
+/* Estilos para pantallas más pequeñas*/
+@media (max-width: 767px) {
+    .contenido img {
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    }
+    .contenido h4{
+        margin-bottom: 3px;
+    }
+}
