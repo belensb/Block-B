@@ -28,12 +28,12 @@
     {% for publicacion in publicaciones %}
     <!-- Tarjeta de Publicación -->
     <div class="col">
-        <div id="postCat" class="card h-100">
+        <div id="postCat" class="card h-100" style="background: rgba(255, 255, 255, 0.9);">
             <!-- Condicional para mostrar imagen si existe -->
             {% if publicacion.imagen %}
-            <img src="{{ publicacion.imagen.url }}" class="card-img-top" alt="...">
+            <img src="{{ publicacion.imagen.url }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
             {% else %}
-            <img src="{% static 'images/default_post.webp' %}" class="card-img-top" alt="...">
+            <img src="{% static 'images/default_post.webp' %}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="...">
             {% endif %}
 
             <div class="card-body">
@@ -44,7 +44,7 @@
             <!-- Footer de la tarjeta -->
             <div class="card-footer" style="background-color: #c8c8c8;">
                 <div class="d-grid gap-2 mx-auto">
-                    <a href="{% url 'detalle-publicacion' publicacion.id %}" class="btn btn-outline-secondary"
+                    <a href="{% url 'detalle-publicacion' publicacion.id %}" class="btn btn-outline-secondary" style="font-weight: bold;"
                         role="button">Ver publicación</a>
                 </div>
 

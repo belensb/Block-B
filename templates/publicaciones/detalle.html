@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block contenido %}
-<div class="card mb-3">
+<div class="card mb-3" style="background: rgba(255, 255, 255, 0.9);">
     <div class="row g-0">
         <div class="col-md-4">
 
             {% if publicacion.imagen %}
-            <img src="{{ publicacion.imagen.url }}" class="img-fluid rounded-start" alt="...">
+            <img src="{{ publicacion.imagen.url }}" class="img-fluid rounded-start" style="height: 100%;" alt="...">
             {% else %}
-            <img src="{% static 'images/default_post.webp' %}" class="img-fluid rounded-start" alt="...">
+            <img src="{% static 'images/default_post.webp' %}" class="img-fluid rounded-start" style="height: 100%;" alt="...">
             {% endif %}
 
 
@@ -37,46 +37,47 @@
 <p style="margin-top: 20px; margin-bottom: 0;"><a href="{% url 'login' %}">Inicia sesión</a> para comentar</p>    
 {% endif %}
 
-<!--Caja de Comentarios-->
+<!--Caja de Comentarios--> 
 <div class="card" style="width: 100%; padding: 5px;">
     <div class="card-header">
         COMENTARIOS
     </div>
 
+    <div >
+        <ul class="list-group list-group-flush">
 
-    <ul class="list-group list-group-flush">
 
-
-        {% if publicacion.comentarios.all %}
-
-        {% for comentario in publicacion.comentarios.all %}
-        <div class="comentario-header">
-            <strong>{{comentario.creador}}</strong>
-            
-            {% if user.is_authenticated %}
-                {% if user == comentario.creador or user.es_colaborador or user.is_superuser %}
-                    <!-- Mostrar botones solo si el usuario actual es el creador del comentario -->
-                    <a href="{% url 'borrar-comentario' comentario.id %}">
-                        <i class="fa-solid fa-trash"></i>
-                    </a>
-                    <a href="{% url 'editar-comentario' comentario.id %}">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                {% endif %}
-            {% endif %}
-        </div>
-        
-        <li class="list-group-item">{{comentario.texto}}</li>
-    {% endfor %}
+            {% if publicacion.comentarios.all %}
     
-
-        {% else %}
-        <p>No hay comentario aún.</p>
-        {% endif %}
-
-
-
-    </ul>
+            {% for comentario in publicacion.comentarios.all %}
+            <div class="comentario-header">
+                <strong>{{comentario.creador}}</strong>
+                
+                {% if user.is_authenticated %}
+                    {% if user == comentario.creador or user.es_colaborador or user.is_superuser %}
+                        <!-- Mostrar botones solo si el usuario actual es el creador del comentario -->
+                        <a href="{% url 'borrar-comentario' comentario.id %}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <a href="{% url 'editar-comentario' comentario.id %}">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            
+            <li class="list-group-item">{{comentario.texto}}</li>
+        {% endfor %}
+        
+    
+            {% else %}
+            <p>No hay comentario aún.</p>
+            {% endif %}
+    
+    
+    
+        </ul>
+    </div>
 
 </div>
 
