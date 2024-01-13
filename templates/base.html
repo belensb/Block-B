@@ -2,9 +2,10 @@
 
 
 <!DOCTYPE HTML>
-<html>
+<html lang="es">
 	<head>
-		<title>BLOCK-B</title>
+		<title>BLOCK-B - Blog literario</title>
+		<meta name="description" content="Descubre historias increíbles gracias a nuestros reviews y recomendaciones">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -54,7 +55,7 @@
 								{% if user.imagen_perfil %}
 								<img src="{{user.imagen_perfil.url}}" alt="Imagen de perfil" style="height: 37px; width: 37px; border-radius: 200px;">
 								{% else %}
-								<img src="{% static 'images/default_avatar.jpg' %}" alt="Imagen de perfil" style="height: 37px; width: 37px; border-radius: 200px;">
+								<img src="{% static 'images/default_avatar.webp' %}" alt="Imagen de perfil" style="height: 37px; width: 37px; border-radius: 200px;">
 								{% endif %}
 								
 								<a href="{% url 'mi-perfil' %}">{{user.first_name}}</a>
