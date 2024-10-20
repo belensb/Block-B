@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'publicaciones',
-    'categorias',
-    'usuarios',
+    'apps.publicaciones',
+    'apps.categorias',
+    'apps.usuarios',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Proyecto_Final.urls'
+ROOT_URLCONF = 'Block-B.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Proyecto_Final.wsgi.application'
+WSGI_APPLICATION = 'Block-B.wsgi.application'
 
 
 # Password validation

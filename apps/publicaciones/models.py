@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from usuarios.models import Usuario
+from apps.usuarios.models import Usuario
 
 
 
@@ -23,7 +23,7 @@ class Publicacion(models.Model):
         return self.titulo
     
     def get_absolute_url(self):
-        return reverse('publicaciones')
+        return reverse('apps.publicaciones')
     
     
 class Comentario(models.Model):

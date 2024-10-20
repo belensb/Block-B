@@ -27,9 +27,9 @@ urlpatterns = [
     path('contacto/', views.contacto_view, name='contacto'),
     
    #aca van los includes
-    path('publicaciones/', include('publicaciones.urls')),
-    path('categorias/', include('categorias.urls')),
-    path('usuarios/', include('usuarios.urls'))
+    path('publicaciones/', include('apps.publicaciones.urls')),
+    path('categorias/', include('apps.categorias.urls')),
+    path('usuarios/', include('apps.usuarios.urls'))
     ]
 
 if settings.DEBUG:

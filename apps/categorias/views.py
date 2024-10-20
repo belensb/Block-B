@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from publicaciones.models import Publicacion
+from apps.publicaciones.models import Publicacion
 
 # Create your views here.
 def categorias_view(request): #definimos el categorias_view y le hacemos un request para que solicite el archivo

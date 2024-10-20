@@ -13,4 +13,4 @@ class Usuario(AbstractUser):
         return self.first_name + " " + self.last_name + f'({self.username})'
     
     def get_absolute_url(self):
-        return reverse('publicaciones')
+        return reverse('apps.publicaciones')
