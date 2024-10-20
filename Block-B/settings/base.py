@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -22,13 +24,13 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3yqea^sc+8$7xor$q6n2@4*$3g54^(@ys9y@9!1b$aydru4=1b'
+SECRET_KEY = config('SECRET_KEY')
 
-ALLOWED_HOSTS = ['grupo6info.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 #VARIABLES DE LOGIN
-LOGIN_URL = '/usuarios/login'
-LOGIN_REDIRECT_URL = '/publicaciones/ver-publicaciones'
+LOGIN_URL = config('LOGIN_URL')
+LOGIN_REDIRECT_URL = config('LOGIN_REDIRECT_URL')
 
 
 # Application definition
